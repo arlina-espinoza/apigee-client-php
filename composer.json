@@ -43,6 +43,7 @@
         "phpmetrics/phpmetrics": "^2.3",
         "phpunit/phpunit": "^6.4.0",
         "sebastian/comparator": "^2.1",
+        "squizlabs/php_codesniffer": "^3.5",
         "symfony/cache": "~3.4 || ~4.0",
         "vimeo/psalm": "^2.0.0"
     },
@@ -76,7 +77,8 @@
         "metrics": "phpmetrics .",
         "metrics-html": "phpmetrics . --report-html=report",
         "check-style": "php-cs-fixer fix --config=./.php_cs.dist --dry-run",
-        "fix-style": "php-cs-fixer fix --config=./.php_cs.dist"
+        "fix-style": "php-cs-fixer fix --config=./.php_cs.dist",
+        "code-style": "phpcs"
     },
     "extra": {
         "branch-alias": {

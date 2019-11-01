@@ -29,6 +29,7 @@ correct and do not break any tests.
 ```sh
 composer fix-style # Automatically fix code style issues.
 composer check-style # Report code style issues that can not be fixed automatically.
+composer code-style # Report more code style issues that can not be fixed automatically.
 composer analyze # Check for errors with the static code-analysis tool.
 compose test # Run PHPUnit tests. (Please always use only tests with real Apigee Edge.) 
 ```

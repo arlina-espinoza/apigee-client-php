@@ -49,6 +49,7 @@ script:
   - IFS=$'\n'; CHANGED_FILES=($(git diff --name-only --diff-filter=ACMRTUXB "${TRAVIS_COMMIT_RANGE}")); unset IFS
   - EXTRA_ARGS=('--path-mode=intersection' '--' "${CHANGED_FILES[@]}")
   - composer check-style -- --using-cache=no "${EXTRA_ARGS[@]}"
+  - composer code-style
   - composer analyze
   # Only calculate metrics data for this specific build.
   - if [[ $(phpenv version-name) = "7.1" ]] && [[ "$DEPENDENCIES" = "--prefer-lowest" ]]; then composer test -- --coverage-clover=clover.xml; else composer test; fi
