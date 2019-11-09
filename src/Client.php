@@ -22,6 +22,7 @@ use Apigee\Edge\Exception\ApiResponseException;
 use Apigee\Edge\Exception\OauthAuthenticationException;
 use Apigee\Edge\HttpClient\Plugin\AddPathPlugin;
 use Apigee\Edge\HttpClient\Plugin\Authentication\AbstractOauth;
+use Apigee\Edge\HttpClient\Plugin\HybridRequestPlugin;
 use Apigee\Edge\HttpClient\Plugin\ResponseHandlerPlugin;
 use Apigee\Edge\HttpClient\Plugin\RetryOauthAuthenticationPlugin;
 use Apigee\Edge\HttpClient\Utility\Builder;
@@ -299,6 +300,7 @@ class Client implements ClientInterface
         $firstPlugins = [
             new AddHostPlugin($this->getBaseUri(), ['replace' => true]),
             new AddPathPlugin($this->getBaseUri()),
+            new HybridRequestPlugin($this->getBaseUri()),
             new HeaderDefaultsPlugin($this->getDefaultHeaders()),
         ];
 
