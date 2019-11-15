@@ -47,6 +47,7 @@
         "vimeo/psalm": "^2.0.0"
     },
     "conflict": {
+        "friendsofphp/php-cs-fixer": ">v2.15.1",
         "guzzlehttp/guzzle": "<6.1.0",
         "guzzlehttp/psr7": "<1.4.1",
         "phpdocumentor/type-resolver": "<0.2.1",
