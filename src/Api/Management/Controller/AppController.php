@@ -60,6 +60,8 @@ class AppController extends PaginatedEntityController implements AppControllerIn
 
     /**
      * @inheritdoc
+     *
+     * @psalm-suppress InvalidReturnType Returning an object here is required.
      */
     public function loadApp(string $appId): AppInterface
     {

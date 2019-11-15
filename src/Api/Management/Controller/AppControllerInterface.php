@@ -60,8 +60,6 @@ interface AppControllerInterface extends PaginatedEntityControllerInterface, Ent
      *
      * @return \Apigee\Edge\Api\Management\Entity\AppInterface
      *   A developer- or a company app entity.
-     *
-     * @psalm-suppress InvalidReturnType Returning an object here is required.
      */
     public function loadApp(string $appId): AppInterface;
 
