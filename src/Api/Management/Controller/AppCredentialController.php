@@ -55,8 +55,6 @@ abstract class AppCredentialController extends EntityController implements AppCr
 
     /**
      * @inheritdoc
-     *
-     * @psalm-suppress InvalidReturnType Returning an object here is required.
      */
     public function create(string $consumerKey, string $consumerSecret): AppCredentialInterface
     {
@@ -75,8 +73,6 @@ abstract class AppCredentialController extends EntityController implements AppCr
 
     /**
      * @inheritdoc
-     *
-     * @psalm-suppress InvalidReturnType Returning an object here is required.
      */
     public function generate(
         array $apiProducts,
@@ -108,8 +104,6 @@ abstract class AppCredentialController extends EntityController implements AppCr
 
     /**
      * @inheritdoc
-     *
-     * @psalm-suppress InvalidReturnType Returning an object here is required.
      */
     public function addProducts(string $consumerKey, array $apiProducts): AppCredentialInterface
     {
@@ -138,8 +132,6 @@ abstract class AppCredentialController extends EntityController implements AppCr
 
     /**
      * @inheritdoc
-     *
-     * @psalm-suppress InvalidReturnType Returning an object here is required.
      */
     public function deleteApiProduct(string $consumerKey, string $apiProduct): AppCredentialInterface
     {
