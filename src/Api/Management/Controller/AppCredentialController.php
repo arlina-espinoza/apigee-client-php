@@ -64,11 +64,14 @@ abstract class AppCredentialController extends EntityController implements AppCr
             (string) json_encode((object) ['consumerKey' => $consumerKey, 'consumerSecret' => $consumerSecret])
         );
 
-        return $this->entitySerializer->deserialize(
-            (string) $response->getBody(),
-            $this->getEntityClass(),
-            'json'
-        );
+        /* @var \Apigee\Edge\Api\Management\Entity\AppCredentialInterface $appCredential */
+        $appCredential = $this->entitySerializer->deserialize(
+        (string) $response->getBody(),
+        $this->getEntityClass(),
+        'json'
+    );
+
+        return $appCredential;
     }
 
     /**

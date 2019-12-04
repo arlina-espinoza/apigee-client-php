@@ -65,12 +65,14 @@ class AppController extends PaginatedEntityController implements AppControllerIn
     {
         $response = $this->client->get($this->getEntityEndpointUri($appId));
 
-        return $this->entitySerializer->denormalize(
-            // Pass it as an object, because if serializer would have been used here (just as other places) it would
-            // pass an object to the denormalizer and not an array.
+        /* @var \Apigee\Edge\Api\Management\Entity\AppInterface $app */
+        $app = $this->entitySerializer->denormalize(
+        // Pass it as an object, because if serializer would have been used here (just as other places) it would
+        // pass an object to the denormalizer and not an array.
             (object) $this->responseToArray($response),
             $this->getEntityClass()
         );
+        return $app;
     }
 
     /**
